@@ -42,10 +42,9 @@ class IsReferal(Filter):
 
 class CheckSubChannel(Filter):
     async def __call__(self, message: Message, bot: Bot):
-        checkSubChan = await bot.get_chat_member(config.channel_id, message.from_user.id)
-        checkSubGru = await bot.get_chat_member(config.group_id, message.from_user.id)
-        checkSubChan, checkSubGru = checkSubChan.is_member, checkSubGru.status
-        if not checkSubChan in ["member", "creator", "adminstrator"] and not checkSubGru in ["member", "creator", "adminstrator"]:
+        checkSub = await bot.get_chat_member(config.channel_id, message.from_user.id)
+        checkSub = checkSub.status
+        if not checkSub in ["member", "creator", "adminstrator"]:
             return True
 
 

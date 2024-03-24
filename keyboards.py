@@ -17,7 +17,6 @@ cancel_keyboard.button(text="🚫 Bekor qilish")
 
 sub_channel_menu = InlineKeyboardBuilder()
 sub_channel_menu.button(text="Kanalga obuna bo'lish", url=config.channel_url)
-sub_channel_menu.button(text="Guruhga obuna bo'lish", url=config.group_url)
 sub_channel_menu.button(text="✅ Tekshirish", callback_data="checksub")
 sub_channel_menu.adjust(1)
 
