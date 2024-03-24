@@ -12,7 +12,7 @@ async def user_sub_channel_message_answer(message: Message, state: FSMContext):
         if sqlPrompts.check_user_referal(message.from_user.id, 404) != 3:
             sqlPrompts.change_referal_status(message.from_user.id, "warm")
     
-    await message.answer("Kanalga obuna bo'ling.", reply_markup=keyboards.sub_channel_menu.as_markup())
+    await message.answer("Kanal va guruhga obuna bo'ling.", reply_markup=keyboards.sub_channel_menu.as_markup())
 
 async def user_name_naswer(message: Message, bot: Bot, state: FSMContext):
     if len(message.text.split()) == 2:
